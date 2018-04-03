@@ -3,8 +3,9 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var users=[];//保存所有在线用户的昵称
-app.use('/', express.static(__dirname + '/www'));
-server.listen(process.env.PORT || 8080);
+app.use('/', express.static(__dirname + '/public'));
+//server.listen(process.env.PORT || 3000);
+server.listen( 3000);
 //socket部分
 io.on('connection', function(socket) {
 
